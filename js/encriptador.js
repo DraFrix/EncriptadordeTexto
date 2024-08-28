@@ -251,9 +251,10 @@ function desencriptar(traduccion){
     return;
 }
 
-function clipboard(){
+function copiar(){
     const texto_out = document.querySelector("#texto_out");
     navigator.clipboard.writeText(texto_out.value);
+    alert("Texto copiado en el portapapeles");
 }
 
 const enc = document.querySelector('#enc');
@@ -269,16 +270,12 @@ var traduccion = {"a": "ai", "e": "enter", "i": "imes", "o": "ober", "u": "ufat"
 
 enc.addEventListener( 'click', function() {encriptar(traduccion);} );
 des.addEventListener( 'click', function() {desencriptar(traduccion);} );
-botonCopiar.addEventListener( 'click', function() {clipboard();} );
-
-
-
+botonCopiar.addEventListener( 'click', function() {copiar();} );
 
 
 // Función de limpiar
 botonLimpiar.addEventListener('click', () => {
-    var textarea = document.querySelector("#texto");
+    textarea = document.querySelector("#texto").value='';
     var textareaout = document.querySelector("#texto_out");
-    textarea.innerHTML = "";
-    textareaout.innerHTML = ""; 
+    textareaout.innerHTML=''; 
 });
