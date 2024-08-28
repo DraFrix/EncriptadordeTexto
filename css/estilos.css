@@ -1,0 +1,233 @@
+:root {
+    --time: 2s cubic-bezier(.88,.89,.49,1.14);
+    --colorprincipal: #DD3511;
+    --colorsecundario:#DD3511;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F3F5FC;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0em;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.light-mode {
+    background-color: #F3F5FC;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: rgb(27, 19, 19);
+    color:#1f212b;
+}
+
+header {
+    width: 100%;
+    background-color: #1f212b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 30px 0; 
+}
+
+.contenedor_header {
+    width: 90%;
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.contenedor {
+    width: 90%;
+    height: 100%;
+    max-width: 1440px;
+    margin: 3.5% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.theme-toggle .icono {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle .icono:hover {
+    transform: scale(1.1);
+}
+
+.invisible {
+    display: none;
+}
+
+.header_title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header_title a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--colorprincipal);
+    transition: color 0.3s ease;
+}
+
+.header_title a:hover {
+    color: #000;
+}
+
+.encriptador {
+    width: 60%;
+    box-sizing: border-box;
+    height: calc(80%);
+}
+
+.text_out_sec {
+    width: 40%;
+    border: 2px solid var(--colorprincipal);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_in {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.text_in_info {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    animation: slide_info var(--time);
+    text-align: center;
+    color: var(--colorprincipal);
+    font-size: 14px;
+    display: flex;
+    align-items: center; /* Coloca la imagen y el texto en línea */
+    justify-content: center;
+    gap: 8px; /* Espacio entre la imagen y el texto */
+    flex-direction: column; /* Alinea el ícono y el texto arriba de los botones */
+    gap: 30px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px; /* Espacio entre el párrafo y los botones */
+    font-size: 14px;
+    color: var(--colorprincipal);
+}
+
+.info > img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.text_in_btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 0;
+    width: 100%;
+}
+
+.text_in_btns > input {
+    width: calc(50% - 6px);
+    padding: 15px 0;
+    border: 2px solid var(--colorprincipal);
+    border-radius: 24px;
+    background-color: var(--colorsecundario);
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.text_in_btns > input:hover {
+    transform: scale(1.05);
+    background-color: #BB2A0C;
+}
+
+.text_in > textarea {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid var(--colorprincipal);
+    border-radius: 24px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #000000;
+    min-height: 150px;
+}
+
+.text_in > textarea:focus {
+    outline: none;
+}
+
+.text_in > textarea::-webkit-input-placeholder {
+    color: #0A3871;
+}
+
+.text_out_sec{
+    height: calc(80%);
+}
+
+#texto_out {
+    width: 100%;
+    height: 100%;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    color: #495057;
+    background-color: #FFF;
+    border: none;
+    border-radius: 24px;
+    resize: none;
+    padding: 20px;
+    box-sizing: border-box;
+    outline: none; 
+}
